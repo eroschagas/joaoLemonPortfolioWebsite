@@ -625,6 +625,9 @@ label {
   .jl-hero-inner-content {
     position: relative;
   }
+  .jl-hero-inner-content div {
+    z-index: 100;
+  }
   .jl-hero-inner-content p {
     margin-bottom: 15px;
   }
