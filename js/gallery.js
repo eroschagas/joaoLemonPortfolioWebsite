@@ -9,12 +9,26 @@ var btnNext = document.querySelector(".jl-item-next");
 var btnPrev = document.querySelector(".jl-item-prev");
 var currentSlide = document.querySelector(".jl-current-slide");
 var totalSlide = document.querySelector(".jl-total-slide");
+var skeletonLoading = document.querySelector(".jl-skeleton-loading");
+
+const skeletonAnim = (imagem) => {
+  skeletonLoading.style.display = "flex";
+  var myImage = new Image();
+  myImage.src = imagem;
+  myImage.addEventListener("load", function (e) {
+    skeletonLoading.classList.add("jl-fade-out");
+    setTimeout(() => {
+      skeletonLoading.style.display = "none";
+    }, 2000);
+  });
+};
 
 const getImageSrc = function () {
   for (let index = 0; index < galleryImages.length; index++) {
     galleryImages[index].addEventListener("click", function (e) {
-      var imageSrc = this.getAttribute("data-src");
       var itemNum = this.getAttribute("data-item");
+      var imageSrc = this.getAttribute("data-src");
+      skeletonAnim(imageSrc);
       frameImage.setAttribute("src", imageSrc);
       frameImage.setAttribute("data-index", itemNum);
       overlay.classList.add("jl-is-open");
@@ -47,6 +61,7 @@ const nextItem = function () {
       //passamos o data-src para a tag do frame
       frameImage.setAttribute("src", nextSrc);
       frameImage.setAttribute("data-index", nextIndex);
+      skeletonAnim(nextSrc);
     }
   }
 };
@@ -67,6 +82,7 @@ const prevItem = function () {
       //passamos o data-src para a tag do frame
       frameImage.setAttribute("src", prevSrc);
       frameImage.setAttribute("data-index", prevIndex);
+      skeletonAnim(prevSrc);
     }
   }
 };
