@@ -475,7 +475,7 @@ label {
   }
   .jl-slider-container-smooth {
     width: 20px;
-    height: 100%;
+    height: calc(100% - 30px);
     background: linear-gradient(to right, #1c1c1c, #1c1c1c00);
     position: absolute;
     left: 0;
@@ -990,6 +990,10 @@ label {
 }
 .jl-full-height {
   height: 100vh;
+  position: relative;
+}
+.jl-almost-full-height {
+  height: calc(100vh - 30px);
   position: relative;
 }
 .jl-first-section {
