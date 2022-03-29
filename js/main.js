@@ -39,38 +39,6 @@ for (let index = 0; index < toggleModal.length; index++) {
 
 //Ajustando a altura da página
 
-//Animando elementos on scroll com waypoints
-
-var waypoint = new Waypoint({
-  element: document.body,
-  handler: function (direction) {
-    if (direction == "down") {
-      topbarBackground.style.maxHeight = "100%";
-      topbarBackground.classList.add("jl-fade-in");
-    } else {
-      topbarBackground.style.maxHeight = "0px";
-      topbarBackground.classList.remove("jl-fade-in");
-    }
-  },
-  offset: "-30px",
-});
-
-var waypoint = new Waypoint({
-  element: myScrollDown,
-  handler: function (direction) {
-    if (direction == "down") {
-      myScrollDown.classList.toggle("jl-fade-out");
-      setTimeout(() => {
-        myScrollDown.classList.toggle("jl-display-none");
-      }, 1000);
-    } else {
-      myScrollDown.classList.toggle("jl-fade-out");
-      myScrollDown.classList.toggle("jl-display-none");
-    }
-  },
-  offset: "80%",
-});
-
 //Animando o menu mobile
 menuButton.addEventListener("click", function (e) {
   menuMobile.classList.toggle("jl-menu-is-closed");
@@ -107,3 +75,35 @@ var adjustMenu = () => {
     menuButton.classList.remove("jl-display-none");
   }
 };
+
+//Animando elementos on scroll com waypoints
+
+var waypoint = new Waypoint({
+  element: document.body,
+  handler: function (direction) {
+    if (direction == "down") {
+      topbarBackground.style.maxHeight = "100%";
+      topbarBackground.classList.add("jl-fade-in");
+    } else {
+      topbarBackground.style.maxHeight = "0px";
+      topbarBackground.classList.remove("jl-fade-in");
+    }
+  },
+  offset: "-30px",
+});
+
+var waypoint = new Waypoint({
+  element: myScrollDown,
+  handler: function (direction) {
+    if (direction == "down") {
+      myScrollDown.classList.toggle("jl-fade-out");
+      setTimeout(() => {
+        myScrollDown.classList.toggle("jl-display-none");
+      }, 1000);
+    } else {
+      myScrollDown.classList.toggle("jl-fade-out");
+      myScrollDown.classList.toggle("jl-display-none");
+    }
+  },
+  offset: "80%",
+});
