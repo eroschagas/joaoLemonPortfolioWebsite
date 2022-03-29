@@ -4,6 +4,13 @@ var toggleModal = document.querySelectorAll(".jl-toggle-modal");
 var myScrollDown = document.querySelector(".jl-scroll-down");
 var topbarBackground = document.querySelector(".jl-topbar-background");
 var postGallery = document.querySelector(".jl-post-gallery");
+const menuButton = document.querySelector(".jl-btn-menu-mob");
+const menuMobile = document.querySelector(".jl-menu-mob");
+var overlay = document.querySelector(".jl-overlay");
+var modalOrcamento = document.querySelector("#jl-modal-orcamento");
+var menuBtnIcon = document.querySelector(".jl-btn-menu-mob ion-icon");
+var close = document.querySelector(".jl-close-all");
+
 //Page Preloader
 window.addEventListener("load", function (e) {
   let pagePreloader = document.querySelector(".jl-preloader");
@@ -23,11 +30,10 @@ btnContact.addEventListener("click", function (e) {
 //Abrindo e fechando o modal de orçamento
 for (let index = 0; index < toggleModal.length; index++) {
   toggleModal[index].addEventListener("click", function (e) {
-    let overlay = document.querySelector(".jl-overlay");
-    let modalOrcamento = document.querySelector("#jl-modal-orcamento");
     overlay.classList.toggle("jl-is-open");
     modalOrcamento.classList.toggle("jl-is-open");
     modalOrcamento.classList.toggle("jl-slide-top-in");
+    adjustMenu();
   });
 }
 
@@ -64,3 +70,40 @@ var waypoint = new Waypoint({
   },
   offset: "80%",
 });
+
+//Animando o menu mobile
+menuButton.addEventListener("click", function (e) {
+  menuMobile.classList.toggle("jl-menu-is-closed");
+  overlay.classList.toggle("jl-is-open");
+  if (menuBtnIcon.getAttribute("name") === "menu-outline") {
+    menuBtnIcon.setAttribute("name", "close-outline");
+  } else {
+    menuBtnIcon.setAttribute("name", "menu-outline");
+  }
+});
+
+overlay.addEventListener("click", function (e) {
+  closeAll();
+});
+
+close.addEventListener("click", function (e) {
+  closeAll();
+});
+var closeAll = () => {
+  menuMobile.classList.add("jl-menu-is-closed");
+  overlay.classList.remove("jl-is-open");
+  modalOrcamento.classList.remove("jl-is-open");
+  modalOrcamento.classList.remove("jl-slide-top-in");
+  if (menuBtnIcon.getAttribute("name") !== "menu-outline") {
+    menuBtnIcon.setAttribute("name", "menu-outline");
+  }
+  adjustMenu();
+};
+
+var adjustMenu = () => {
+  if (modalOrcamento.classList.contains("jl-is-open") == true) {
+    menuButton.classList.add("jl-display-none");
+  } else {
+    menuButton.classList.remove("jl-display-none");
+  }
+};
