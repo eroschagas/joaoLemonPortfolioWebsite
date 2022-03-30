@@ -120,19 +120,29 @@ label {
     background-color: #1c1c1c;
     border: 30px solid #000;
   }
+
   .jl-preloader {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
     position: fixed;
     top: 0;
     left: 0;
   }
   .jl-preloader-inner {
     margin-top: -45px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .jl-preloader-inner img {
+    max-height: 50vh;
+    max-width: 50vw;
   }
   .jl-overlay {
     width: 100%;
@@ -204,7 +214,7 @@ label {
   }
   .jl-topbar {
     width: 100%;
-    height: 110px;
+    height: 90px;
     display: block;
     background-color: transparent;
     position: fixed;
@@ -215,7 +225,7 @@ label {
   .jl-topbar-background {
     width: calc(100% - 60px);
     margin-left: 30px;
-    height: 150px;
+    height: 90px;
     max-height: 0;
     display: block;
     background: linear-gradient(
@@ -231,7 +241,7 @@ label {
   }
   .jl-logo {
     width: 75px;
-    height: 110px;
+    height: 90px;
     float: left;
     margin-left: 60px;
     background-color: #2ccb69;
@@ -241,7 +251,7 @@ label {
     width: 46px;
     height: 31px;
     display: block;
-    margin: 55px auto 0 auto;
+    margin: 35px auto 0 auto;
   }
   .jl-menu {
     display: none;
@@ -249,7 +259,7 @@ label {
   #jl-btn-open-modal {
     font-size: 14px;
     padding: 0 20px;
-    margin: 0 auto;
+    margin: 015px auto 0 auto;
   }
 
   .jl-btn-menu-mob {
@@ -382,6 +392,10 @@ label {
   .jl-display-text {
     margin-top: 60px;
   }
+  .jl-display-text p {
+    font-size: 14px;
+  }
+
   #jl-home-presentation {
     background-image: url("../images/joao-lemon-designer-home.png");
     background-repeat: no-repeat;
@@ -501,6 +515,12 @@ label {
     background-color: #2c2c2c;
     border-radius: 23px;
   }
+  .jl-items-next-prev-mob {
+    width: 150px;
+    margin: 0 auto;
+    border: 1px solid #2ccb69;
+    position: relative;
+  }
   .jl-items-next-prev-manage-it {
     width: fit-content;
     position: absolute;
@@ -539,6 +559,7 @@ label {
     position: relative;
   }
   .jl-slider-container-smooth {
+    display: none;
     width: 20px;
     height: calc(100% - 30px);
     background: linear-gradient(to right, #1c1c1c, #1c1c1c00);
@@ -549,7 +570,7 @@ label {
   }
   .jl-slider-list {
     width: auto;
-    height: 700px;
+    height: fit-content;
     display: block;
     list-style: none;
     margin-left: 20px;
@@ -559,21 +580,31 @@ label {
   }
   .jl-slider-list .jl-slider-item {
     display: block;
-    height: 500px;
+    height: fit-content;
     display: block;
     float: left;
-    margin-top: calc(26vh - 75px);
+    margin-top: calc(26vh - 105px);
   }
   .jl-portfolio-list .jl-portfolio-item {
     margin-bottom: 100px;
   }
   .jl-slider-list .jl-portfolio-item-info {
-    width: calc(100% - 75px);
+    width: 100%;
     display: table;
-    margin-top: 55px;
     position: relative;
     opacity: 0;
     left: -75px;
+    text-align: center;
+    padding-right: 20px;
+  }
+  .jl-portfolio-item-info button {
+    margin: 0 auto 15px auto;
+  }
+  .jl-portfolio-item-info h1 {
+    font-size: 28px;
+  }
+  .jl-portfolio-item-info p {
+    font-size: 14px;
   }
   .jl-portfolio-list .jl-portfolio-item-info {
     width: calc(100% - 105px);
@@ -585,7 +616,7 @@ label {
   .jl-portfolio-list .jl-portfolio-item-thumb {
     width: 100%;
     display: table;
-    padding: 75px 0 19px 0;
+    padding: 35px 0 19px 0;
     position: relative;
   }
   .jl-slider-list .jl-portfolio-item-thumb > button,
@@ -625,7 +656,7 @@ label {
     max-width: 100%;
     height: auto;
     position: relative;
-    left: -75px;
+    left: 0;
     transform: scale(0);
   }
   .jl-portfolio-list .jl-portfolio-item-thumb img {
@@ -836,17 +867,39 @@ label {
   }
   /* Utilitárias */
   .jl-title-xlarge {
-    font-size: 90px;
+    font-size: 70px;
   }
 }
 @media screen and (min-width: 576px) {
   #jl-home-presentation {
     background-size: auto 98%;
   }
+  .jl-slider-list .jl-portfolio-item-info {
+    width: calc(100% - 75px);
+  }
+  .jl-slider-list .jl-portfolio-item-info {
+    padding-right: 0;
+  }
 }
 @media screen and (min-width: 768px) {
-  .jl-display-text {
-    margin-top: 10%;
+  .jl-slider-list .jl-portfolio-item-info {
+    text-align: left;
+  }
+  .jl-portfolio-item-info button {
+    margin: 0;
+  }
+  .jl-slider-list .jl-slider-item {
+    margin-top: calc(26vh - 75px);
+  }
+
+  .jl-slider-list .jl-portfolio-item-thumb img {
+    left: -75px;
+  }
+  .jl-slider-list .jl-portfolio-item-info {
+    margin-top: 80px;
+  }
+  .jl-items-next-prev-mob {
+    bottom: 70px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -857,8 +910,33 @@ label {
   #jl-btn-open-modal {
     margin: 15px 0 0 0;
   }
-  .jl-portfolio-navigator {
-    display: table;
+  .jl-topbar {
+    height: 110px;
+  }
+  .jl-logo {
+    height: 110px;
+  }
+  .jl-logo img {
+    margin: 55px auto 0 auto;
+  }
+  .jl-topbar-background {
+    height: 150px;
+  }
+  .jl-display-text {
+    margin-top: 10vh;
+  }
+  .jl-display-text p {
+    font-size: 16px;
+  }
+
+  .jl-slider-list .jl-portfolio-item-info {
+    margin-top: 55px;
+  }
+  .jl-portfolio-item-info h1 {
+    font-size: 64px;
+  }
+  .jl-portfolio-item-info p {
+    font-size: 16px;
   }
 
   .jl-menu {
@@ -870,6 +948,13 @@ label {
   }
   .jl-menu-mob {
     display: none;
+  }
+  .jl-slider-list .jl-portfolio-item-thumb,
+  .jl-portfolio-list .jl-portfolio-item-thumb {
+    width: 100%;
+    display: table;
+    padding: 75px 0 19px 0;
+    position: relative;
   }
   .jl-btn-menu-mob {
     display: none;
@@ -913,6 +998,15 @@ label {
 @media screen and (min-width: 1200px) {
   #jl-btn-open-modal {
     font-size: 16px;
+  }
+  .jl-items-next-prev-mob {
+    display: none;
+  }
+  .jl-portfolio-navigator {
+    display: table;
+  }
+  .jl-slider-container-smooth {
+    display: block;
   }
 }
 @media screen and (min-width: 1364px) {

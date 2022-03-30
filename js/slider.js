@@ -6,8 +6,8 @@ var sliderList = document.querySelector(".jl-slider-list");
 var sliderItem = document.querySelectorAll(".jl-slider-item");
 const sliderTotalItems = sliderItem.length;
 var sliderListWidth = null;
-var prevItem = document.querySelector(".jl-item-prev");
-var nextItem = document.querySelector(".jl-item-next");
+var prevItem = document.querySelectorAll(".jl-item-prev");
+var nextItem = document.querySelectorAll(".jl-item-next");
 var sliderPos = 0;
 var currentSlide = document.querySelector(".jl-current-slide");
 var totalSlide = document.querySelector(".jl-total-slide");
@@ -161,15 +161,19 @@ anime({
   width: 90,
 });
 
-nextItem.addEventListener("click", function (e) {
-  nextSlideAnim();
-  counterAdd();
-  setActiveNav();
-  setActiveSlide();
-});
-prevItem.addEventListener("click", function (e) {
-  prevSlideAnim();
-  counterRemove();
-  setActiveNav();
-  setActiveSlide();
-});
+for (let index = 0; index < nextItem.length; index++) {
+  nextItem[index].addEventListener("click", function (e) {
+    nextSlideAnim();
+    counterAdd();
+    setActiveNav();
+    setActiveSlide();
+  });
+}
+for (let index = 0; index < prevItem.length; index++) {
+  prevItem[index].addEventListener("click", function (e) {
+    prevSlideAnim();
+    counterRemove();
+    setActiveNav();
+    setActiveSlide();
+  });
+}
