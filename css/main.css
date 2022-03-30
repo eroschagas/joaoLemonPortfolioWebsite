@@ -670,7 +670,7 @@ label {
     max-width: 100%;
     height: auto;
     position: relative;
-    left: -75px;
+    left: 0;
   }
 
   /* -----PORTFOLIO----- */
@@ -691,7 +691,7 @@ label {
   .jl-portfolio-list
     .jl-portfolio-item:nth-child(even)
     .jl-portfolio-item-info {
-    margin: 53px 0 0 105px;
+    margin: 53px 0 0 0;
   }
   .jl-portfolio-list .jl-portfolio-item:nth-child(even) .row {
     flex-direction: row-reverse;
@@ -700,14 +700,14 @@ label {
     .jl-portfolio-item:nth-child(even)
     .jl-portfolio-item-thumb
     img {
-    left: 75px;
+    left: 0;
   }
   .jl-portfolio-list
     .jl-portfolio-item:nth-child(even)
     .jl-portfolio-item-thumb
     button {
     float: left;
-    margin-left: 75px;
+    margin-left: 0;
   }
 
   /* -----SOBRE----- */
@@ -1029,6 +1029,28 @@ label {
   }
   .jl-textarea {
     height: 128px;
+  }
+  .jl-portfolio-list .jl-portfolio-item-thumb img {
+    left: -75px;
+  }
+  .jl-portfolio-list
+    .jl-portfolio-item:nth-child(even)
+    .jl-portfolio-item-info {
+    margin: 53px 0 0 105px;
+  }
+
+  .jl-portfolio-list
+    .jl-portfolio-item:nth-child(even)
+    .jl-portfolio-item-thumb
+    img {
+    left: 75px;
+  }
+  .jl-portfolio-list
+    .jl-portfolio-item:nth-child(even)
+    .jl-portfolio-item-thumb
+    button {
+    float: left;
+    margin-left: 75px;
   }
 }
 @media screen and (min-width: 1200px) {
