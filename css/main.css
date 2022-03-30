@@ -70,7 +70,7 @@ label {
 }
 @keyframes slideTopIn {
   100% {
-    top: 15%;
+    top: 0%;
     opacity: 1;
   }
 }
@@ -155,7 +155,7 @@ label {
     background-color: rgba(44, 203, 105, 0.95);
   }
   .jl-modal {
-    width: 800px;
+    width: 100%;
     display: none;
     padding: 30px;
     border-radius: 0 30px 30px 30px;
@@ -167,6 +167,13 @@ label {
     z-index: 1200;
     opacity: 0;
   }
+  .jl-modal h1 {
+    font-size: 24px;
+  }
+  .jl-modal p {
+    font-size: 14px;
+  }
+
   .jl-modal-header,
   .jl-modal-body,
   .jl-form {
@@ -189,8 +196,8 @@ label {
     background-color: #2f2f2f;
   }
   .jl-form label {
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-bottom: 5px;
+    font-size: 14px;
     display: inline-block;
   }
   .jl-field,
@@ -200,17 +207,16 @@ label {
     border-radius: 4px;
     color: #fff;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     text-indent: 15px;
-    max-width: 740px;
     max-height: 340px;
   }
   .jl-textarea {
-    min-width: 360px;
-    min-height: 100px;
+    height: 60px;
   }
+
   .jl-field {
-    height: 45px;
+    height: 35px;
   }
   .jl-topbar {
     width: 100%;
@@ -993,6 +999,36 @@ label {
   }
   .jl-title-xlarge {
     font-size: 120px;
+  }
+  .jl-modal {
+    width: 800px;
+  }
+  @keyframes slideTopIn {
+    100% {
+      top: 15%;
+      opacity: 1;
+    }
+  }
+  .jl-modal h1 {
+    font-size: 32px;
+  }
+  .jl-modal p {
+    font-size: 16px;
+  }
+  .jl-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .jl-field,
+  .jl-textarea {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .jl-field {
+    height: 45px;
+  }
+  .jl-textarea {
+    height: 128px;
   }
 }
 @media screen and (min-width: 1200px) {
