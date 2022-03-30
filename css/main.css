@@ -246,6 +246,12 @@ label {
   .jl-menu {
     display: none;
   }
+  #jl-btn-open-modal {
+    font-size: 14px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
   .jl-btn-menu-mob {
     width: 54px;
     height: 54px;
@@ -374,15 +380,20 @@ label {
   /* -----HOME----- */
 
   .jl-display-text {
-    margin-top: 10%;
+    margin-top: 60px;
   }
   #jl-home-presentation {
     background-image: url("../images/joao-lemon-designer-home.png");
     background-repeat: no-repeat;
     background-position: 50% bottom;
-    background-size: auto 98%;
+    background-size: 100% auto;
     position: relative;
   }
+  #jl-home-presentation h1,
+  #jl-home-presentation p {
+    text-align: center;
+  }
+
   .jl-scroll-down {
     width: 70px;
     height: 105px;
@@ -436,7 +447,7 @@ label {
   .jl-portfolio-navigator {
     width: 145px;
     height: 400px;
-    display: table;
+    display: none;
     position: absolute;
     top: 26vh;
   }
@@ -823,12 +834,33 @@ label {
     position: relative;
     top: 20px;
   }
+  /* Utilitárias */
+  .jl-title-xlarge {
+    font-size: 90px;
+  }
 }
 @media screen and (min-width: 576px) {
+  #jl-home-presentation {
+    background-size: auto 98%;
+  }
 }
 @media screen and (min-width: 768px) {
+  .jl-display-text {
+    margin-top: 10%;
+  }
 }
 @media screen and (min-width: 992px) {
+  #jl-home-presentation h1,
+  #jl-home-presentation p {
+    text-align: left;
+  }
+  #jl-btn-open-modal {
+    margin: 15px 0 0 0;
+  }
+  .jl-portfolio-navigator {
+    display: table;
+  }
+
   .jl-menu {
     display: table;
     float: left;
@@ -837,6 +869,9 @@ label {
     background-color: transparent;
   }
   .jl-menu-mob {
+    display: none;
+  }
+  .jl-btn-menu-mob {
     display: none;
   }
   .jl-menu a {
@@ -871,8 +906,14 @@ label {
   .jl-menu a:hover:before {
     transform: scale(1, 1);
   }
+  .jl-title-xlarge {
+    font-size: 120px;
+  }
 }
 @media screen and (min-width: 1200px) {
+  #jl-btn-open-modal {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 1364px) {
 }
@@ -958,9 +999,6 @@ label {
 }
 .jl-title-large {
   font-size: 64px;
-}
-.jl-title-xlarge {
-  font-size: 120px;
 }
 .jl-text-green {
   color: #2ccb69;

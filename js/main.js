@@ -42,7 +42,9 @@ for (let index = 0; index < toggleModal.length; index++) {
 //Animando o menu mobile
 menuButton.addEventListener("click", function (e) {
   menuMobile.classList.toggle("jl-menu-is-closed");
-  overlay.classList.toggle("jl-is-open");
+  setTimeout(function () {
+    overlay.classList.toggle("jl-is-open");
+  }, 300);
   if (menuBtnIcon.getAttribute("name") === "menu-outline") {
     menuBtnIcon.setAttribute("name", "close-outline");
   } else {
