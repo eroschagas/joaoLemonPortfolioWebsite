@@ -677,10 +677,13 @@ label {
 
   .jl-section-offset-top {
     padding-top: 130px;
+    overflow-x: hidden;
   }
   .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info {
     text-align: right;
-    margin-top: 53px;
+    margin-top: 25px;
+    float: right;
+    margin-right: 0;
   }
   .jl-portfolio-list
     .jl-portfolio-item:nth-child(odd)
@@ -691,7 +694,7 @@ label {
   .jl-portfolio-list
     .jl-portfolio-item:nth-child(even)
     .jl-portfolio-item-info {
-    margin: 53px 0 0 0;
+    margin-top: 25px;
   }
   .jl-portfolio-list .jl-portfolio-item:nth-child(even) .row {
     flex-direction: row-reverse;
@@ -939,7 +942,7 @@ label {
     margin-top: 55px;
   }
   .jl-portfolio-item-info h1 {
-    font-size: 64px;
+    font-size: 48px;
   }
   .jl-portfolio-item-info p {
     font-size: 16px;
@@ -1038,7 +1041,9 @@ label {
     .jl-portfolio-item-info {
     margin: 53px 0 0 105px;
   }
-
+  .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info {
+    margin-top: 53px;
+  }
   .jl-portfolio-list
     .jl-portfolio-item:nth-child(even)
     .jl-portfolio-item-thumb
@@ -1051,6 +1056,12 @@ label {
     button {
     float: left;
     margin-left: 75px;
+  }
+  .jl-portfolio-item-info h1 {
+    font-size: 48px;
+  }
+  .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info {
+    margin-right: 90px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1065,6 +1076,9 @@ label {
   }
   .jl-slider-container-smooth {
     display: block;
+  }
+  .jl-portfolio-item-info h1 {
+    font-size: 64px;
   }
 }
 @media screen and (min-width: 1364px) {
