@@ -718,11 +718,22 @@ label {
   #jl-avatar-sobre img {
     position: relative;
     left: -42px;
-    bottom: -30px;
+    bottom: 0px;
     max-height: 737px;
     width: auto;
   }
-
+  .jl-box-img {
+    display: none;
+  }
+  .jl-box-img img {
+    width: 100%;
+    display: table;
+  }
+  .jl-sobre-wrapper {
+    display: block;
+    height: fit-content;
+    min-height: 100vh;
+  }
   /* -----DETALHES----- */
 
   .jl-hero {
@@ -1063,6 +1074,9 @@ label {
   .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info {
     margin-right: 90px;
   }
+  .jl-box-img {
+    display: block;
+  }
 }
 @media screen and (min-width: 1200px) {
   #jl-btn-open-modal {
@@ -1266,10 +1280,6 @@ label {
 }
 .jl-no-padding {
   padding: 0px !important;
-}
-.jl-box-img img {
-  width: 100%;
-  display: table;
 }
 .jl-img-responsive {
   width: 100%;
